@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frontend Mentor | Interactive Card Details</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    
+    <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+    
+    <link rel="stylesheet" href="https://kit.fontawesome.com/b69fb5b7db.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b69fb5b7db.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header class="header">
+
+        <div class="header__container">
+            <div class="header__card-back header__card">
+                <img src="./images/bg-card-back.png" alt="Backside of Credit Card">
+                <div class="cvc-place">000</div>
+            </div>
+            
+            <div class="header__card-front header__card grid-2">
+                <img class="grid-2__item" style="--cl: 1/-1 ; --rw: 1/-1 ;" src="./images/bg-card-front.png" alt="Frontside of Credit Card">
+                <div class="logo grid-2__item" style="--cl: 2/3 ; --rw: 2/3 ;">
+                    <img src="./images/card-logo.svg" alt="">
+                </div>
+                <div class="number-place grid-2__item" style="--cl:2/5 ; --rw: 3/4 ;">0000 0000 0000 0000</div>
+                <div class="name-place grid-2__item" style="--cl: 2/4 ; --rw: 4/5 ;">JANE APPLESEED</div>
+                <div class="date-place grid-2__item" style="--cl: 4/5 ; --rw: 4/5 ;">
+                    <span class="month-place">00/</span>
+                    <span class="year-place">00</span>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+
+    <main class="main">
+
+        <form action="#" class="form flex">
+
+            <div class="flex__item grid-3">
+                <label for="name-el">cardholder name</label>
+                <input type="text" name="Name" id="name-el" 
+                pattern="[a-zA-z]+[\sa-zA-Z]+" 
+                required placeholder="e.g. Jane Appleseed">
+                <span id="name-invalid" class="hidden">Wrong Format,Letters Only and Space between names</span>
+                <span id="name-empty" class="hidden">Can't be blank</span>
+            </div>
+
+            <div class="flex__item grid-3">
+                <label for="number-el">card number</label>
+                <input type="text" name="Number" id="number-el" 
+                pattern="(\d{4})+\s(\d{4})+\s(\d{4})+\s(\d{4})"
+                maxlength="19"
+                required placeholder="e.g. 1234 5678 9123 0000">
+                <span id="number-invalid" class="hidden">Wrong Format,Numbers Only</span>
+                <span id="number-empty" class="hidden">Can't be blank</span>
+            </div>
+
+            <div class="flex__item grid">
+                <label class="grid__item" style="--cl: 1/3 ; --rw: 1/2 ;" for="month-el">exp.date (mm/yy)</label>
+                <input pattern="[0-1][0-2]" maxlength="2"
+                required class="grid__item" style="--cl: 1/2 ; --rw: 2/3" type="text" name="Exp-Month" id="month-el" placeholder="MM">
+                <label class="grid__item" style="--cl: 1/3 ; --rw: 1/2 ;visibility: hidden;" for="year-el"></label>
+                <input pattern="\d{2}" maxlength="2"
+                required class="grid__item" style="--cl: 2/3 ; --rw: 2/3" type="text" name="Exp-Year" id="year-el" placeholder="YY">
+                <span id="date-invalid" class="grid__item hidden" style="--cl: 1/3 ; --rw: 3/4">Wrong Format,Numbers Only</span>
+                <span id="date-empty" class="grid__item hidden" style="--cl: 1/3 ; --rw: 3/4">Can't be blank</span>
+                <label class="grid__item" style="--cl: 3/5 ; --rw: 1/2" for="cvc-el">cvc</label>
+                <input pattern="\d{3}" maxlength="3"
+                required class="grid__item" style="--cl: 3/5 ; --rw: 2/3" type="text" name="Cvc" id="cvc-el" placeholder="e.g. 123">
+                <span id="cvc-invalid" class="grid__item hidden" style="--cl: 3/5 ; --rw: 3/4">Wrong Format,Numbers Only</span>
+                <span id="cvc-empty" class="grid__item hidden" style="--cl: 3/5 ; --rw: 3/4">Can't be blank</span>
+            </div>
+
+            <button type="submit">Confirm</button>
+
+        </form>
+
+        <section class="submitted flex-2 hidden">
+            <img class="submitted__image" src="./images/icon-complete.svg" alt="">
+            <p class="submitted__thank">THANK YOU</p>
+            <p class="submitted__message">We've added your card details</p>
+            <button class="submitted__button">Continue</button>
+        </section>
+
+        <footer class="footer">Challenge by 
+            <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by 
+            <a class="me" href="https://www.frontendmentor.io/profile/Nurio34" target="_blank">Nurio34</a>.        </footer>
+    </main>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

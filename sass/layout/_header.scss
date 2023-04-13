@@ -1,0 +1,219 @@
+
+.header {
+    background-image: url("../images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100%; //
+
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        min-width: 375px;
+        height: 240px;
+
+        position: relative;
+    }
+    &__card {
+        width: 288px;
+        position: absolute;
+    }
+    &__card-back {
+        top:33px;
+        right : 15px;
+
+        .cvc-place {
+            position: absolute;
+            top: 68px;
+            right: 34px;
+
+            color: white;
+            font-size: $fs-1 - 0.3rem;
+        }
+    }
+    &__card-front {
+        bottom : -40px;
+        right : 72px;
+
+        color: $White;
+        
+        .logo {
+
+        }
+        .number-place {
+            letter-spacing: 3px;
+        }
+        .name-place {
+            font-size: $fs-1 - 0.3rem ;
+            color: $LightGrayish;
+
+            align-self: flex-end;
+        }
+        .date-place {
+            font-size: $fs-1 - 0.3rem;
+            color: $LightGrayish;
+
+            align-self: flex-end;
+            justify-self: flex-end;
+        }
+    }
+}
+
+
+.main {
+    position: relative;
+    .form {
+        padding-block: 96px 45px;
+        padding-inline: 25px;
+    
+        label {
+            padding-block-end: 9px;
+        }
+        input {
+            width: 100%;
+            border:1px solid $LightGrayish;
+            border-radius: 6px;
+            text-transform: capitalize;
+    
+            padding: 4px 18px;
+    
+            &:invalid {
+                border-color: $Red;
+            }
+            &:placeholder-shown {
+                border-color: $LightGrayish;
+            }
+            &:focus-visible {
+                outline: none;
+                border-color: $Linear-1;
+                
+            }
+            &::placeholder {
+                color: $DarkGrayish;
+            }
+        }
+
+        span {
+            font-size: 0.7rem;
+            text-transform: none;
+            color: $Red;
+        }
+    }
+
+    .submitted {
+
+        padding-block-start: 149px;
+
+        &__thank {
+            font-size: $fs-1 + 0.5rem;
+            letter-spacing: 6px;
+            font-weight: 900;
+        }
+
+        &__message {
+            text-transform: none;
+            color: $DarkGrayish;
+        }
+
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        text-transform: none;
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+
+        .me {
+            font-family: $ff-sign;
+            font-size: 2rem;
+        }
+    }
+}
+
+
+@media (min-width:1226px) {
+
+    body {
+        display: flex; //
+    }
+
+
+    .header {
+        flex: 1 25%; //
+        background-image: url("../images/bg-main-desktop.png"); //
+        background-size: 100% 100vh; //
+        align-items: center; //
+    
+        &__container { 
+            width: 100%; //
+            height: 100%; //
+            }
+        &__card {
+            width: 450px; //
+        }
+        &__card-back {
+            top:522px; //
+            right : -223px; //
+    
+            .cvc-place {
+                top: 108px; //
+                right: 64px; //
+    
+                font-size: $fs-1; //
+            }
+        }
+        &__card-front {
+            bottom : 480px; //
+            right : -130px; //
+                
+            .number-place {
+                letter-spacing: 7px; //
+                font-size: $fs-1 + 0.5rem; //
+                align-self: flex-end; //
+            }
+            .name-place {
+                font-size: $fs-1; //
+            }
+            .date-place {
+                font-size: $fs-1 ; //
+                align-self: flex-end; //
+                justify-self: flex-end; //
+            }
+        }
+    }
+    
+    
+    .main {
+        flex: 1 75%; //
+        
+        display: flex; //
+        justify-content: center; //
+        align-items: center; //
+
+        .form {
+            padding: unset; //
+        
+            #month-el,
+            #year-el {
+                width: 80%;
+            }
+        }
+
+
+        .submitted {
+            padding : unset ; //
+
+            &__button {
+                min-width: 390px; //
+            }
+        }
+
+        .footer {
+            font-size: $fs-1;
+            bottom: 2rem;
+        }
+    }
+
+}
